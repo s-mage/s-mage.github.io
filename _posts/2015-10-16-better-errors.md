@@ -22,7 +22,7 @@ then it's fine, app should panic and you should fix it.
 
 But problem is that people use exceptions to manage control flow.
 And it looks like fucking goto.  Really, see the following example
-(stolen from [niwi.nz][https://www.niwi.nz/2015/03/08/error-handling/]):
+(stolen from [niwi.nz](https://www.niwi.nz/2015/03/08/error-handling/)):
 
     def read_report_file(name:str, owner:User) -> Report:
         try:
@@ -46,10 +46,10 @@ some (hopefully) usefull work and handles some error.
 you shouldn't touch it. But if you need to add more catch clauses you
 have to change the function without changing main logic. What if you
 break something by this? About open/closed principle you can read more in
-[wiki][https://www.wikiwand.com/en/Open/closed_principle]
+[wiki](https://www.wikiwand.com/en/Open/closed_principle)
 * It brings unnecessary complexity. In particular, incidental complexity:
 the sequence that you list which exception types you're going to handle
-before others. Watch [simple made easy][http://www.infoq.com/presentations/Simple-Made-Easy]
+before others. Watch [simple made easy](http://www.infoq.com/presentations/Simple-Made-Easy)
 to realize why simplicity matters.
 
 Go developers in their documentation explain this problem too:
@@ -90,7 +90,7 @@ process it somehow.
 
 The idea to return error is value is good, but the code looks a little awkward.
 In clojure we can add a couple of macros to reduce boilerplate
-(see [adambard][http://adambard.com/blog/acceptable-error-handling-in-clojure/])
+(see [adambard](http://adambard.com/blog/acceptable-error-handling-in-clojure/))
 but we still have to return a vector in each function.
 
 What if we had a way to distinguish errors from results? Wait, we have it:
@@ -160,7 +160,7 @@ m...khm-khm...onads. Scared already? Relax, I'll show how it all works.
             (if (failed? result#) ~else result#))))
 
 Yes, looks scary. Moreover, I stole it 
-from [brehaut][http://brehaut.net/blog/2011/error_monads]. But here is how
+from [brehaut](http://brehaut.net/blog/2011/error_monads). But here is how
 it works:
 
     (attempt-all [a 1
