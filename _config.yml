@@ -1,5 +1,5 @@
-title: schfkt's website
-description: "Мой персональный сайт, посвящённый в основном программированию и всему с этим связанному"
+title: s-mage's place
+description: "That's my place to express thoughts when I have them. Mostly about programming."
 permalink: /:year/:month/:day/:title.html
 markdown: kramdown
 gems:
