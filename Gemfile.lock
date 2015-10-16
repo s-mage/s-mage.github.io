@@ -143,6 +143,3 @@ DEPENDENCIES
   image_optim
   jekyll-compose
   rake
-
-BUNDLED WITH
-   1.10.6
