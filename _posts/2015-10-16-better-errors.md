@@ -83,7 +83,7 @@ of two values where the first one is the result and the second one is error.
 When error is nil then it's fine, moving on. When it's not then we have to
 process it somehow.
 
-```{golang}
+```golang
 def get_soundcard_usb_version(computer):
     sound_card, err = get_sound_card(computer)
     if err:
@@ -104,7 +104,7 @@ but we still have to return a vector in each function.
 
 What if we had a way to distinguish errors from results? Wait, we have it:
 
-```{clojure}
+```clojure
 (defrecord Failure [message])
 
 (defn fail [message] (Failure. message))
@@ -119,13 +119,12 @@ What if we had a way to distinguish errors from results? Wait, we have it:
   Object    (failed? [self] false)
   Failure   (failed? [self] true)
   Exception (failed? [self] true))
-
 ```
 
 Nice! Thank's Rich for that. Now we can check if our function call failed
 or not:
 
-```{clojure}
+```clojure
 (if (failed? (somefun 42)) "oh that's bad" "oh that's great!")
 ```
 
@@ -133,7 +132,7 @@ Great. I think you already got that we're not stopping here and not
 going to do the checking in every single function we use.
 Let's automate that:
 
-```{clojure}
+```clojure
 (defn failed-arg [args]
   (first (filter failed? args)))
 
@@ -146,14 +145,14 @@ errors through functions. If any argument of the function is Failure
 then nothing will be done and the argument will be returned. Else
 we will just call the function. Les't demonstrate:
 
-```
+```clojure
 (maybe + 2 3) ;= 5
 (maybe + 2 (fail "oops!")) ;= #Failure{:message "oops!"}
 ```
 
 Yahoo! Aren't we cool already? Definitely we are. Let's go further:
 
-```{clojure}
+```clojure
 (defmacro maybe->> [val & fns]
   (let [fns (for [f fns] `(maybe ~f))]
     `(->> ~val ~@fns)))
@@ -161,7 +160,7 @@ Yahoo! Aren't we cool already? Definitely we are. Let's go further:
 
 Now we chain functions that can potentially fail just as simple as any others:
 
-```{clojure}
+```clojure
 (maybe->> 3 #(fail (str "arg: " %)) #(/ 5 %)) ;= #Failure{:message "arg: 3"}
 (maybe->> 3 #(+ 2 %) #(/ 5 %)) ;= 1
 ```
@@ -169,7 +168,7 @@ Now we chain functions that can potentially fail just as simple as any others:
 Last thing is to implement the bingings syntax. And we will use
 m...khm-khm...onads. Scared already? Relax, I'll show how it all works.
 
-```{clojure}
+```clojure
 (require '[clojure.algo.monads :refer [defmonad domonad]])
 
 (defmonad error-m 
@@ -187,7 +186,7 @@ Yes, looks scary. Moreover, I stole it
 from [brehaut][http://brehaut.net/blog/2011/error_monads]. But here is how
 it works:
 
-```{clojure}
+```clojure
 (attempt-all [a 1
               b (inc a)] b)) ;= 2
 
