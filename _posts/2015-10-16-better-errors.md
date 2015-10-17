@@ -6,6 +6,7 @@ date: 2015-10-16
 tags:
  - :en
  - :code-design
+ - :clojure
 ---
 
 Why and when try/catch sucks
