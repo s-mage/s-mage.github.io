@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Better Errors"
-description: "Exception-based control flow sucks. And I know how to do it better."
+description: "Exception-based flow control sucks. And I know how to do it better."
 date: 2015-10-16
 tags:
  - :en
