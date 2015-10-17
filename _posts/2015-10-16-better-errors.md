@@ -13,6 +13,7 @@ Why and when try/catch sucks
 
 Exceptions were invented to handle unexpected situations. And here is
 where they are good. When your app:
+
 * needs to die silently 
 * or panic on top-level about syntax error
 * or catch errors that caused by really unexpected 
