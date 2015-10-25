@@ -33,7 +33,7 @@ task :post do
 end
 
 desc 'Run jekyll serve -w --drafts'
-task :serve do
+task :preview do
   system 'jekyll serve -w --drafts'
 end
 
@@ -44,4 +44,3 @@ task :image_optim do
   image_optim.optimize_images!(Dir[path])
   puts 'Done'
 end
-
