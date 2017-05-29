@@ -18,6 +18,7 @@ pre, code {
 }
 
 code { padding: 2px 8px; }
+pre > code { padding: 0; }
 
 blockquote {
   font-style: italic;
