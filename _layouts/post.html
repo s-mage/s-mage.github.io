@@ -6,12 +6,9 @@ layout: default
   <div class="page-meta">{{ page.date | date: "%b %-d, %Y" }}</div>
   <div class="page-meta">{{ page.content | number_of_words }} word(s)</div>
   {% if page.tags != empty %}
-    <div class="page-meta">
+    <div class="page-meta tags">
       {% for tag in page.tags %}
         <a href="/tags.html#{{ tag | cgi_escape }}">{{ tag }}</a>
-        {% unless forloop.last %}
-          <span class="tag-separator"></span>
-        {% endunless %}
       {% endfor %}
     </div>
   {% endif %}

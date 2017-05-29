@@ -1,28 +1,23 @@
+$text-base: #444;
 $light-black: #888;
+$bg-code: #9ad9c5;
 $button-radius: 4px;
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Play', sans-serif;
-}
+h1, h2, h3, h4, h5, h6 { font-family: 'Play', sans-serif; }
 
 a {
   text-decoration: underline;
-  color: #444;
+  color: $text-base;
 }
 
-pre {
-  border-radius: 0px;
-  color: #2b2525;
-  background-color: rgba(57, 181, 141, 0.51);
-  padding: 14px;
-}
-
-p > code,
-li > code {
-  background-color: #e8e6e3;
-  padding: 2px 5px;
+pre, code {
+  border-radius: 0;
+  background-color: $bg-code;
+  padding: 1rem;
   word-wrap: normal;
 }
+
+code { padding: 2px 8px; }
 
 blockquote {
   font-style: italic;
@@ -36,28 +31,17 @@ blockquote {
 article img {
   max-width: 100%;
   height: auto;
-  -webkit-border-radius: 0.3em;
-  -moz-border-radius: 0.3em;
-  -ms-border-radius: 0.3em;
-  -o-border-radius: 0.3em;
-  border-radius: 0.3em;
-  -webkit-box-shadow: rgba(0,0,0,0.15) 0 1px 4px;
-  -moz-box-shadow: rgba(0,0,0,0.15) 0 1px 4px;
+  border-radius: 0;
+  border: none;
   box-shadow: rgba(0,0,0,0.15) 0 1px 4px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
-  border: #fff 0.5em solid;
 }
 
 #container {
   width: 94%;
   max-width: 720px;
   margin: 0 auto;
-}
-
-#empty-block {
-  height: 50px;
+  padding-bottom: 50px;
 }
 
 #navigation {
@@ -87,8 +71,8 @@ article img {
     }
 
     a:hover {
-      color: #fff;
-      background-color: #444;
+      color: white;
+      background-color: $text-base;
     }
   }
 }
@@ -100,14 +84,11 @@ article img {
   li {
     padding: 4px 0;
 
+    .date, .arrow { color: $light-black; }
+
     .date {
       display: inline-block;
       width: 100px;
-    }
-
-    .date,
-    .arrow {
-      color: $light-black;
     }
 
     a {
@@ -116,33 +97,23 @@ article img {
     }
 
     a:hover {
-      color: #fff;
-      background-color: #444;
+      color: white;
+      background-color: $text-base;
     }
   }
 }
 
 .page-header {
   margin-bottom: 20px;
-
-  h1 {
-    text-align: center;
-  }
+  text-align: center;
 
   .page-meta {
-    text-align: center;
-    font-size: 85%;
+    font-size: 0.9rem;
     color: $light-black;
     text-indent: 0;
     margin: 0;
 
-    a {
-      color: $light-black;
-    }
-
-    .tag-separator:after {
-      content: ' · ';
-      padding: 0 3px;
-    }
+    a { color: $light-black; }
+    a + a:after { content: ' '; padding: 2px; }
   }
 }
