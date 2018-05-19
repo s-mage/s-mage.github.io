@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "About Social Networks"
-description: "Don't talk to copypast"
-date: 2015-10-16
+description: "Don't talk to copypaste"
+date: 2016-07-02
 tags:
  - :en
  - :social-networks
@@ -10,6 +10,8 @@ tags:
 
 What happened?
 ==============
+
+(02.07.2016)
 
 I just watched this video: https://youtu.be/rE3j_RHkqJc
 
@@ -50,6 +52,12 @@ like to analyze the latest news that russians now can flight to Turkey.
 And because of everyone talks about it I want some news about brexit.
 
 When I was younger (even younger) I liked to spend time on anonimous forums.
-And it was a shame if someone posts a thing that is a copypast and you
-reply to it. If this investigation will show what I just suggested it would
-mean that now almost everyone talks to copypast.
+And it was a shame if someone posts a thing that is a copypaste and you
+reply to it. If this research will show what I just suggested it would
+mean that now almost everyone talks to copypaste.
+
+(15.06.2017)
+
+Ok, today is 15.06.2017. And I want to quit twitter and useless news again.
+Guess why. And I didn't make any research because didn't find a right way to
+do it.
